@@ -59,7 +59,7 @@
       <!-- form -->
       <section class='container-form'>
         <p class='h2 text-center mb-4'>Update blog</p>
-        <form action='/update-post/{{blog.id}}' method='POST'>
+        <form action='/update-post/{{blog.id}}' method='POST' enctype="multipart/form-data">
           {{#if msg}}
             <div class='alert alert-danger' role='alert'>
               {{msg}}
@@ -101,6 +101,7 @@
             <input
               class='form-control {{errorMessages.image.appendClass}}'
               type='file'
+              name='image'
               id='formFile'
             />
             <div class='form-text'>Image must be .jpeg or .jpg or .png</div>

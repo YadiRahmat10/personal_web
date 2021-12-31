@@ -175,13 +175,14 @@ app.get('/edit-blog/:id', (req, res) => {
 // update blog
 app.post(
   '/update-post/:id',
+  upload.single('image'),
   (req, res) => {
     db.connect((err, client, done) => {
       done();
       if (err) throw err;
       client.query(
         'UPDATE blog SET title = $1, content = $2, image = $3 WHERE id = $4',
-        [req.body.title, req.body.content, 'demo-png.jpg', req.params.id],
+        [req.body.title, req.body.content, req.file.filename, req.params.id],
         (error, result) => {
           if (error) throw error;
           res.redirect('/blog');
