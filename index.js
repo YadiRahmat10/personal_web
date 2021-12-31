@@ -206,8 +206,9 @@ app.get('/detail-blog/:id', (req, res) => {
       `SELECT * FROM blog WHERE id = ${req.params.id}`,
       (error, result) => {
         if (error) throw error;
-
-        const blog = { ...result.rows[0], images: '/uploads/'+image,author: 'Yadi' };
+        
+        result.rows[0].image = '/uploads/'+ result.rows[0].image
+        const blog = { ...result.rows[0],author: 'Yadi' };
         blog.post_date = getFullTime(`${blog.post_date}`);
         res.render('detail-blog', { blog });
       }
