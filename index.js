@@ -72,7 +72,7 @@ app.get('/', (req, res)=>{
   db.connect((err, client, done)=>{
     if (err) throw err
 
-    client.query('SELECT * FROM experience', (err, result)=>{
+    client.query('SELECT * FROM experiences', (err, result)=>{
       let data = result.rows
       console.log(data)
 
