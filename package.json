@@ -1,7 +1,7 @@
 {
-  "name": "day1-introduction-nodejs-bootstrap",
+  "name": "personal_web_yadi",
   "version": "1.0.0",
-  "description": "",
+  "description": "yadi heroku personal web",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
