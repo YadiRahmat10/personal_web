@@ -207,7 +207,7 @@ app.get('/detail-blog/:id', (req, res) => {
       (error, result) => {
         if (error) throw error;
 
-        const blog = { ...result.rows[0], image: '/uploads/'+image,author: 'Yadi' };
+        const blog = { ...result.rows[0], images: '/uploads/'+image,author: 'Yadi' };
         blog.post_date = getFullTime(`${blog.post_date}`);
         res.render('detail-blog', { blog });
       }
