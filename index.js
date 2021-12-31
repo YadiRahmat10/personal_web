@@ -8,6 +8,7 @@ const db = require('./connection/db');
 const upload = require('./middleware/uploadFile');
 
 const app = express();
+// const PORT = 3000;
 const PORT = process.env.PORT
 
 function getFullTime(t) {
